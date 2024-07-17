@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Funcionario funcionario = new Funcionario("Joao", "123456789-00", "Gerente", "9999-9999", "joao@gmail.com");
