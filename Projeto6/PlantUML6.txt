@@ -1,0 +1,42 @@
+@startuml
+class Usuario {
+  - nome: String
+  - email: String
+  - senha: String
+  - perfil: Perfil
+}
+
+class Perfil {
+  - nome: String
+  - foto: String
+  - status: String
+  - amigos: String
+}
+
+class Postagem {
+  - usuario: Usuario
+  - conteudo: String
+  - data: Date
+  - curtidas: Integer
+}
+
+class Comentario {
+  - postagem: Postagem
+  - usuario: Usuario
+  - conteudo: String
+  - data: Date
+}
+
+class Mensagem {
+  - remetente: Usuario
+  - destinatario: Usuario
+  - conteudo: String
+  - data: Date
+}
+
+Usuario --> Perfil : "1 para 1"
+Perfil --> Postagem : "1 para 0..*"
+Postagem --> Comentario : "1 para 0..*"
+Usuario --> Comentario : "1 para 0..*"
+Mensagem --> Usuario : "1 para 1"
+@enduml

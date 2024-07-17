@@ -1,0 +1,44 @@
+@startuml
+class Voo {
+  - numeroVoo: String
+  - companhiaAerea: CompanhiaAerea
+  - origem: String
+  - destino: String
+  - horarioPartida: Date
+  - horarioChegada: Date
+  - preco: Float
+}
+
+class Cliente {
+  - nome: String
+  - cpf: String
+  - endereco: String
+  - telefone: String
+  - email: String
+}
+
+class Reserva {
+  - cliente: Cliente
+  - voo: Voo
+  - assento: Assento
+  - dataReserva: Date
+}
+
+class Assento {
+  - numeroAssento: String
+  - classe: String
+  - disponivel: Boolean
+}
+
+class CompanhiaAerea {
+  - nome: String
+  - codigo: String
+  - telefone: String
+  - email: String
+}
+
+Voo --> Reserva : "1 para 0..*"
+Cliente --> Reserva : "1 para 0..*"
+Voo --> Assento : "1 para 1..*"
+CompanhiaAerea --> Voo : "1 para 1..*"
+@enduml

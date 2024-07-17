@@ -1,0 +1,42 @@
+@startuml
+class Reserva {
+  - hospede: Hospede
+  - quarto: Quarto
+  - dataCheckIn: Date
+  - dataCheckOut: Date
+}
+
+class Hospede {
+  - nome: String
+  - cpf: String
+  - endereco: String
+  - telefone: String
+  - email: String
+}
+
+class Quarto {
+  - numero: String
+  - tipo: String
+  - status: String
+  - preco: Float
+}
+
+class Servico {
+  - tipo: String
+  - descricao: String
+  - preco: Float
+}
+
+class Funcionario {
+  - nome: String
+  - cpf: String
+  - cargo: String
+  - telefone: String
+  - email: String
+}
+
+Reserva --> Hospede : "1 para 1"
+Reserva --> Quarto : "1 para 1"
+Reserva --> Servico : "1 para 0..*"
+Funcionario --> Servico : "1.. para 1..*"
+@enduml

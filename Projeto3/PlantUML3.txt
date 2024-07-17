@@ -1,0 +1,45 @@
+@startuml
+class Paciente {
+  - nome: String
+  - cpf: String
+  - endereco: String
+  - telefone: String
+  - historicoConsultas: String
+  - alergias: String
+}
+
+class Consulta {
+  - paciente: Paciente
+  - medico: Medico
+  - data: Date
+  - resultadosExames: String
+  - prescricoes: String
+}
+
+class Hospital {
+  - nome : String
+  - localizacao : String
+  - telefone : String
+  - leitos : Int
+}
+
+class Medico {
+  - nome: String
+  - crm: String
+  - especialidade: String
+  - telefone: String
+  - email: String
+}
+
+class Leitos{
+  - numeroDoLeito: Int
+  - disponibilidade: Boolean
+}
+
+
+Hospital --> Paciente : "1 para 0..*"
+Hospital --> Leitos : "1 para 0..*"
+Paciente --> Consulta : "1 para 0..*"
+Consulta --> Medico : "0..* para 1"
+
+@enduml

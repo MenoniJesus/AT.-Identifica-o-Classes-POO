@@ -1,0 +1,45 @@
+@startuml
+
+class Cliente {
+  - nome: String
+  - cpf: String
+  - endereco: String
+  - telefone: String
+  - email: String
+}
+
+class Processo {
+  - cliente: Cliente
+  - advogado: Advogado
+  - numeroProcesso: String
+  - status: String
+  - descricao: String
+}
+
+class Advogado {
+  - nome: String
+  - oab: String
+  - especialidade: String
+  - telefone: String
+  - email: String
+}
+
+class Compromisso {
+  - cliente: Cliente
+  - advogado: Advogado
+  - data: Date
+  - descricao: String
+}
+
+class Documento {
+  - tipo: String
+  - descricao: String
+  - data: Date
+}
+
+Cliente --> Processo : "1 para 0..*"
+Advogado --> Processo : "1 para 0..*"
+Advogado --> Compromisso : "1 para 0..*"
+Cliente --> Compromisso : "1 para 0..*"
+Processo --> Documento : "1 para 1..*"
+@enduml

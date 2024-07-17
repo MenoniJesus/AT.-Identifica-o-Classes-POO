@@ -1,0 +1,43 @@
+@startuml
+class Produto {
+  - nome: String
+  - descricao: String
+  - preço: Float
+  - estoque: Integer
+}
+
+class Cliente {
+  - nome: String
+  - cpf: String
+  - endereço: String
+  - telefone: String
+  - email: String
+}
+
+class Pedido {
+  - cliente: Cliente
+  - produto: String
+  - quantidade: Integer
+  - data: Date
+  - status: String
+}
+
+class Pagamento {
+  - pedido: Pedido
+  - tipo: String
+  - valor: Float
+  - data: Date
+}
+
+class Envio {
+  - pedido: Pedido
+  - dataEnvio: Date
+  - dataEntrega: Date
+  - status: String
+}
+
+Produto --> Pedido : "1 para 0..*"
+Cliente --> Pedido : "1 para 0..*"
+Pedido --> Pagamento : "1 para 1"
+Pedido --> Envio : "1 para 1"
+@enduml

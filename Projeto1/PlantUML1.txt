@@ -1,0 +1,42 @@
+@startuml
+class Livro {
+  - titulo: String
+  - autor: String
+  - editora: String
+  - categoria: String
+}
+
+class Usuario {
+  - nome: String
+  - tipo: String
+  - matricula: String
+  - endereco: String
+  - telefone: String
+  - email: String
+}
+
+class Emprestimo {
+  - livro: Livro
+  - usuario: Usuario
+  - dataRetirada: Date
+  - dataDevolucao: Date
+}
+
+class Funcionario {
+  - nome: nome
+  - telefone: telefone
+  - email: email
+}
+
+class Biblioteca {
+  - nome: String
+  - endereco: String
+  - telefone: String
+  - email: String
+}
+
+Livro --> Emprestimo : "1 para 0..*"
+Usuario --> Emprestimo : "1 para 0..*"
+Biblioteca --> Livro : "1 para 1..*"
+Biblioteca --> Funcionario : "1 para 1..*"
+@enduml
