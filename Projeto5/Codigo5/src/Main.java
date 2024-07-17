@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Cliente cliente1 = new Cliente("João", "123.456.789-00", "Rua A, 123", "(11) 99999-9999", "joao@hotmail.com");
