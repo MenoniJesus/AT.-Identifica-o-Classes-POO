@@ -1,2 +1,3 @@
-# AT.-Identifica-o-Classes-POO
-Atividade referente a Identificar de classes e atributos, além de instanciar objetos
+**Projeto de Identificação de Classes e Atributos**
+
+  Este repositório contém a implementação de diversos sistemas, onde foram identificadas classes e seus respectivos atributos, de acordo com os escopos simplificados fornecidos. Cada sistema possui seu próprio projeto com as classes implementadas em Java e seus respectivos diagramas de classes.
