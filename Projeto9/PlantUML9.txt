@@ -1,0 +1,40 @@
+@startuml
+class Turista {
+  - nome: String
+  - especie: String
+  - planetaOrigem: String
+  - dataChegada: Date
+  - periodoEstadia: String
+}
+
+class Acomodacao {
+  - tipo: String
+  - localizacao: String
+  - preco: Float
+  - disponibilidade: Boolean
+}
+
+class Passeio {
+  - destino: String
+  - data: Date
+  - guia: Guia
+}
+
+class Guia {
+  - nome: String
+  - especie: String
+  - idioma: String
+}
+
+class Reserva {
+  - turista: Turista
+  - acomodacao: Acomodacao
+  - passeio: Passeio
+  - dataReserva: Date
+}
+
+Turista --> Reserva : "1 para 0..*"
+Reserva --> Acomodacao : "1 para 1"
+Reserva --> Passeio : "1 para 1"
+Passeio --> Guia : "0..* para 1"
+@enduml

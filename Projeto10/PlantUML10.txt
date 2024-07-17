@@ -1,0 +1,38 @@
+@startuml
+class Arvore {
+  - especie: String
+  - localizacao: String
+  - estadoSaude: String
+}
+
+class Adotante {
+  - nome: String
+  - cpf: String
+  - endereço: String
+  - telefone: String
+  - email: String
+}
+
+class Adocao {
+  - adotante: Adotante
+  - arvore: Arvore
+  - dataAdocao: Date
+}
+
+class Manutencao {
+  - arvore: Arvore
+  - atividade: String
+  - data: Date
+}
+
+class Evento {
+  - tipo: String
+  - data: Date
+  - localizacao: String
+}
+
+Adotante --> Adocao : "1 para 0..*"
+Adocao --> Arvore : "1 para 1"
+Manutencao --> Arvore : "1 para 1"
+Arvore --> Evento : "0..* para 1"
+@enduml

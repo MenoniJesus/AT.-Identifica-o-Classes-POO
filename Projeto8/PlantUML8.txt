@@ -1,0 +1,42 @@
+@startuml
+class Membro {
+  - nome: String
+  - cpf: String
+  - endereço: String
+  - telefone: String
+  - email: String
+}
+
+class Instrutor {
+  - nome: String
+  - cpf: String
+  - especialidade: String
+  - telefone: String
+  - email: String
+}
+
+class Aula {
+  - tipo: String
+  - instrutor: Instrutor
+  - data: Date
+  - horario: String
+}
+
+class Plano {
+  - nome: String
+  - descricao: String
+  - preco: Float
+}
+
+class Pagamento {
+  - membro: Membro
+  - plano: Plano
+  - data: Date
+  - valor: Float
+}
+
+Membro --> Pagamento : "1 para 0..*"
+Pagamento --> Plano : "1 para 1"
+Instrutor --> Aula : "1 para 0..*"
+Membro --> Aula : "0..* para 0..*"
+@enduml
